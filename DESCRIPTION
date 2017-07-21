@@ -1,0 +1,9 @@
+Package: limma_voom_DE
+Type: R
+Title: Differential Expression using limma-voom
+Version: 1.0
+Date: 2017-07-21
+Author: Yatish B Patil
+Maintainer: yatish.16@gmail.com
+Description: Differential Expression of count data using limma-voom
+License: GPL2.0
