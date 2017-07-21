@@ -36,7 +36,7 @@ toptable = topTable(fit,coef=ncol(design),number=20000,adjust.method="BH") # Get
 p.adjusted <- p.adjust(fit$p.value[,2], method=method) # Getting q value(p-adjusted value)
 
 # Results Writing to file
-toptable_out = paste0(Sys.Date(),file,"_toptable_rsults.txt")
+toptable_out = paste0(Sys.Date(),file,"_toptable_results.txt")
 write.table(toptable,toptable_out,quote = FALSE,row.names = FALSE)
 
 results_limma <- cbind(fit$coeff, fit$p.value[,2], p.adjusted)
