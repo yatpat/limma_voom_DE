@@ -37,15 +37,15 @@ p.adjusted <- p.adjust(fit$p.value[,2], method=method) # Getting q value(p-adjus
 
 # Results Writing to file
 toptable_out = paste0(Sys.Date(),file,"_toptable_results.txt")
-write.table(toptable,toptable_out,quote = FALSE,row.names = FALSE)
+write.table(toptable,toptable_out,quote = FALSE)
 
 results_limma <- cbind(fit$coeff, fit$p.value[,2], p.adjusted)
 colnames(results_limma) <- c("av_expr", "2LogFC", "pvalue", "adjusted_pvalue")
 results_limma <- results_limma[order(p.adjusted),]
 
-results_limma_genes=cbind(rownames(results_limma),combat); dim(results_limma_genes)
+results_limma_genes=cbind(rownames(results_limma),results_limma); dim(results_limma_genes)
 colnames(results_limma_genes) <- c("Genes",colnames(results_limma))
 output = paste0(Sys.Date(),file,"_","DE_results.txt")
-write.table(results_limma,output,quote = FALSE,row.names = FALSE)
+write.table(results_limma,output,quote = FALSE)
 
 }
